@@ -16,8 +16,9 @@ const validateForm = () => {
         message.style.color = 'red';
         messageContainer.style.borderColor = 'red';
     }
+
     // Check to see if passwords match
-    if (password1El.value === password2El.values) {
+    if (password1El.value === password2El.value) {
         passwordsMatch = true;
         password1El.style.borderColor = 'green';
         password2El.style.borderColor = 'green';
@@ -30,6 +31,12 @@ const validateForm = () => {
         password2El.style.borderColor = 'red';
     }
 
+    // If form is valid and passwords match
+    if (isValid && passwordsMatch) {
+        message.textContent = 'Successfully Registered!';
+        message.style.color = 'green';
+        messageContainer.style.borderColor = 'green';
+    }
 }
 
 const processFormData = e => {
